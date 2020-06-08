@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Entreprise {
 	
@@ -21,6 +23,7 @@ public class Entreprise {
 	private String ville;
 	private String pays;
 	@OneToMany(mappedBy = "entreprise", cascade = CascadeType.REMOVE)
+	@JsonIgnore
 	private List<Contact> contacts;
 	
 	public Entreprise() {

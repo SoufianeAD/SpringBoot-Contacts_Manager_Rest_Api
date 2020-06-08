@@ -1,6 +1,7 @@
 package com.example.demo.models;
 
 import java.util.List;
+import java.util.Vector;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -36,6 +37,13 @@ public class Utilisateur {
 		this.userName = userName;
 		this.password = password;
 		this.roles = roles;
+	}
+	
+	public Utilisateur(String userName, String password) {
+		super();
+		this.userName = userName;
+		this.password = password;
+		this.roles = new Vector<>();
 	}
 
 	public int getId() {
